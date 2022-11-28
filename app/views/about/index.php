@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <h1>Ini halaman about</h1>
+    <h1>About me</h1>
+    <p>My name is <?=$data['name']?></p>
 </body>
 
 </html>
