@@ -24,18 +24,16 @@ $mhs = $data['mahasiswa'];
                 </th>
                 <td>
                     <div>
-                        <div class="font-bold"><?=$mhs['nama']?></div>
-                        <div class="text-sm opacity-50"><?=$mhs['email']?></div>
+                        <div class="font-bold"><?= $mhs['nama'] ?></div>
+                        <div class="text-sm opacity-50"><?= $mhs['email'] ?></div>
                     </div>
                 </td>
                 <td>
-                    <?=$mhs['nim']?>
+                    <?= $mhs['nim'] ?>
                     <br />
-                    <span class="badge badge-ghost badge-sm"><?=$mhs['kelas']?></span>
                 </td>
-                <td> <?=$mhs['jurusan']?>
+                <td> <?= $mhs['jurusan'] ?>
                 </td>
-
             </tr>
         </tbody>
         <tfoot>

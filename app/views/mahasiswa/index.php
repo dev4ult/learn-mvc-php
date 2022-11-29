@@ -29,8 +29,6 @@
                 </td>
                 <td>
                     <?=$mhs['nim']?>
-                    <br />
-                    <span class="badge badge-ghost badge-sm"><?=$mhs['kelas']?></span>
                 </td>
                 <td> <?=$mhs['jurusan']?>
                 </td>
