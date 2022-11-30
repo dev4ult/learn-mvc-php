@@ -4,7 +4,6 @@ class Mahasiswa_model {
     private $db;
     private $table;
 
-
     public function __construct() {
         $this->table = 'mahasiswa';
         $this->db = new Database();
@@ -16,7 +15,7 @@ class Mahasiswa_model {
     }
 
     public function getMahasiswaById($id) {
-        $this->db->query("SELECT * FROM {$this->table} WHERE id:id");
+        $this->db->query("SELECT * FROM {$this->table} WHERE id=:id");
         $this->db->bind('id', $id);
         return $this->db->single();
     }

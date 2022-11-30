@@ -1,10 +1,10 @@
-<div class="navbar bg-base-100">
+<div class="navbar bg-base-100 max-w-6xl mx-auto">
     <div class="flex-1">
-        <a class="btn btn-ghost normal-case text-xl" href="<?=BASEURL?>">Home</a>
+        <a class="btn btn-ghost normal-case text-xl" href="<?= BASEURL ?>">Home</a>
     </div>
     <div class="flex-none">
         <ul class="menu menu-horizontal p-0">
-            <li><a href="<?=BASEURL?>/about">About</a></li>
+            <li><a href="<?= BASEURL ?>/about">About</a></li>
             <li tabindex="0">
                 <a>
                     Parent
@@ -18,7 +18,7 @@
                     <li><a>Submenu 2</a></li>
                 </ul>
             </li>
-            <li><a href="<?=BASEURL?>/mahasiswa">Mahasiswa</a></li>
+            <li><a href="<?= BASEURL ?>/mahasiswa">Mahasiswa</a></li>
         </ul>
     </div>
 </div>
