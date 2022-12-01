@@ -1,7 +1,7 @@
 <?php
 $mhs = $data['mahasiswa'];
 ?>
-<div class="overflow-x-auto w-full">
+<div class="overflow-x-auto w-full mx-auto max-w-6xl">
     <table class="table w-full">
         <thead>
             <tr>

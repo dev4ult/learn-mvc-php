@@ -19,4 +19,21 @@ class Mahasiswa_model {
         $this->db->bind('id', $id);
         return $this->db->single();
     }
+
+    public function addNewMahasiswa($data) {
+        $this->db->query("INSERT INTO mahasiswa VALUES ('', :nama, :nim, :email, :jurusan, '')");
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('nim', $data['nim']);
+        $this->db->bind('jurusan', $data['jurusan']);
+
+        $this->db->execute();
+
+        return $this->db->rowChangeCheck();
+    }
+
+    public function deleteMahasiswaById($id) {
+        $this->db->query("DELETE FROM mahasiswa WHERE id=:id");
+        $this->db->bind('id', $id);
+    }
 }
