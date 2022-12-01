@@ -8,6 +8,7 @@ $mhs = $data['mahasiswa'];
                 <th>Nama</th>
                 <th>NIM</th>
                 <th>Jurusan</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +20,12 @@ $mhs = $data['mahasiswa'];
                 <td>
                     <?= $mhs['nim'] ?>
                 </td>
-                <td> <?= $mhs['jurusan'] ?>
+                <td>
+                    <?= $mhs['jurusan'] ?>
                 </td>
+                <th>
+                    <a href="<?= BASEURL ?>/mahasiswa/delete/<?= $mhs['id'] ?>" class="btn btn-sm">delete</a>
+                </th>
             </tr>
         </tbody>
     </table>

@@ -23,7 +23,22 @@ class Mahasiswa extends Controller {
     public function tambah() {
         if ($this->model('Mahasiswa_model')->addNewMahasiswa($_POST) > 0) {
             header('Location:' . BASEURL . '/mahasiswa');
+            Flasher::setFlash('Succesfully inserted a row', 'Close', 'success');
             exit;
+        } else {
+            Flasher::setFlash('Failed to insert a row', 'Close', 'error');
         }
+    }
+
+    public function delete($id = -1) {
+        if ($id >= 0) {
+            if ($this->model('Mahasiswa_model')->deleteMahasiswaById($id) > 0) {
+                Flasher::setFlash('Succesfully deleted a row', 'Close', 'success');
+            } else {
+                Flasher::setFlash('Failed to delete a row', 'Close', 'error');
+            }
+        }
+        header('location: ' . BASEURL . '/mahasiswa');
+        exit;
     }
 }

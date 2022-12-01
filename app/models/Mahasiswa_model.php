@@ -35,5 +35,7 @@ class Mahasiswa_model {
     public function deleteMahasiswaById($id) {
         $this->db->query("DELETE FROM mahasiswa WHERE id=:id");
         $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowChangeCheck();
     }
 }

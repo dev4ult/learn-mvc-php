@@ -1,4 +1,5 @@
 <div class="overflow-x-auto w-full max-w-6xl mx-auto">
+    <?= Flasher::flash() ?>
     <label for="modal-tambah" class="btn btn-sm btn-primary mb-5">tambah mahasiswa +</label>
     <table class="table w-full max-w-6xl mx-auto">
         <thead>
