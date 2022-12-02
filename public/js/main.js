@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // close flasher
-  $('.btn-close-flash').click(function (e) {
+  $('.btn-close-flash').click(function () {
     $('.alert').toggleClass('hidden');
   });
 });

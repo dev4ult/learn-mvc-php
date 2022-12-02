@@ -68,6 +68,7 @@ class Mahasiswa extends Controller {
 
         if (isset($_POST['keyword'])) {
             $data['list-mahasiswa'] = $this->model("Mahasiswa_model")->getAllMahasiswaByKeyword();
+            // Flasher::setFlash('Keyword : ' . $_POST['keyword'], 'success');
             $this->view('templates/header', $data);
             $this->view('templates/navbar');
             $this->view('mahasiswa/index', $data);
