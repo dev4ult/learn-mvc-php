@@ -14,10 +14,15 @@ class Mahasiswa extends Controller {
     public function detail($id) {
         $data['page-title'] = "detail mahasiswa";
         $data['mahasiswa'] = $this->model('Mahasiswa_model')->getMahasiswaById($id);
-        $this->view('templates/header', $data);
-        $this->view('templates/navbar');
-        $this->view('mahasiswa/detail', $data);
-        $this->view('templates/footer');
+        if ($this->model('Mahasiswa_model')->dataIsExistById($id)) {
+            $this->view('templates/header', $data);
+            $this->view('templates/navbar');
+            $this->view('mahasiswa/detail', $data);
+            $this->view('templates/footer');
+        } else {
+            header('location: ' . BASEURL . '/mahasiswa');
+            exit;
+        }
     }
 
     public function tambah() {
@@ -31,14 +36,28 @@ class Mahasiswa extends Controller {
     }
 
     public function delete($id = -1) {
-        if ($id >= 0) {
+        header('location: ' . BASEURL . '/mahasiswa');
+        if ($this->model('Mahasiswa_model')->dataIsExistById($id)) {
             if ($this->model('Mahasiswa_model')->deleteMahasiswaById($id) > 0) {
                 Flasher::setFlash('Succesfully deleted a row', 'Close', 'success');
             } else {
                 Flasher::setFlash('Failed to delete a row', 'Close', 'error');
             }
         }
-        header('location: ' . BASEURL . '/mahasiswa');
+        exit;
+    }
+
+    public function ubah($id = -1) {
+        if ($this->model('Mahasiswa_model')->dataIsExistById($id)) {
+            header('location: ' . BASEURL . '/mahasiswa/detail/' . $id);
+            if ($this->model('Mahasiswa_model')->editMahasiswaById($_POST, $id) > 0) {
+                Flasher::setFlash('Succesfully edited this data', 'Close', 'success');
+            } else {
+                Flasher::setFlash('Failed to edit this data', 'Close', 'error');
+            }
+        } else {
+            header('location: ' . BASEURL . '/mahasiswa');
+        }
         exit;
     }
 }
