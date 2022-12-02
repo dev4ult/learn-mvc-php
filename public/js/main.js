@@ -1,4 +1,6 @@
-function clearFlash() {
-  const flash = document.querySelector('.alert');
-  flash.classList.toggle('hidden');
-}
+$(document).ready(function () {
+  // close flasher
+  $('.btn-close-flash').click(function (e) {
+    $('.alert').toggleClass('hidden');
+  });
+});

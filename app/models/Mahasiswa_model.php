@@ -64,6 +64,15 @@ class Mahasiswa_model {
         return $this->db->rowChangeCheck();
     }
 
+    public function getAllMahasiswaByKeyword() {
+        $keyword = $_POST['keyword'];
+        $keyword = "%$keyword%";
+        $this->db->query("SELECT * FROM mahasiswa WHERE nama LIKE :keyword");
+        $this->db->bind('keyword', $keyword);
+
+        return $this->db->resultSet();
+    }
+
     public function dataIsExistById($id) {
         $this->db->query("SELECT * FROM mahasiswa WHERE id=:id LIMIT 1");
         $this->db->bind('id', $id);
